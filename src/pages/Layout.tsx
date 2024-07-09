@@ -4,18 +4,19 @@ import '../dataStyle.css';
 const Layout = () => {
     return (
         <>
-            <nav id="menu">
-                <ul>
+            <nav>
+                <ul className="navHorizontal">
                     <li>
-                        <Link to="/">Buses </Link>
+                        <Link className='navLink' to="/">Buses </Link>
                     </li>
                     <li>
-                        <Link to="/history">History</Link>
+                        <Link className='navLink' to="/history">History</Link>
                     </li>
                 </ul>
+
             </nav>
 
-            <Outlet />
+            <Outlet/>
         </>
     )
 };

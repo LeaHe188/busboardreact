@@ -50,7 +50,7 @@ interface Output {
     lineName: string,
     timeToStation: number,
     destinationName: string,
-    stationName : string,
+    stationName: string,
 
 }
 export type {responseData, Coords, Stops, Output};

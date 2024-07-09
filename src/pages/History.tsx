@@ -3,7 +3,7 @@ import '../dataStyle.css';
 
 function App(): React.ReactElement {
     return <>
-        <div>
+        <div className="bodyText">
             <h2>History of the London Buses</h2>
             <p>The early 19th century saw the arrival of the omnibus in London, introduced by English coachbuilder George Shillibeer. Before that the only road vehicles for public hire were four wheeled coaches called hackneys.
                 Strict licensing regulations allowed for monopoly of public transport and as a result Shillibeer was refused permission to run the omnibus in the Central London area. Instead he chose to run the service along busy routes around the edge of London, from Paddington to the city via Islington.
