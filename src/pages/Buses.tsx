@@ -3,6 +3,7 @@ import fetchData from '../fetchData';
 import {Output} from '../type';
 import '../dataStyle.css';
 import BusTable from "../BusTable";
+import {useEffect} from "react";
 
 const Buses: React.FC = () => {
   const [postcode, setPostcode] = useState<string>("");
@@ -11,29 +12,29 @@ const Buses: React.FC = () => {
   async function formHandler(event: React.FormEvent<HTMLFormElement>): Promise<void> {
     event.preventDefault(); // to stop the form refreshing the page when it submits
     const data = await fetchData(postcode);
-    setTableData(data);
+    if (!data) {
+        alert('Please input valid postcode!')
+    } else {
+    setTableData(data);}
   }
 
   function updatePostcode(data: React.ChangeEvent<HTMLInputElement>): void {
     setPostcode(data.target.value)
   }
 
-  // const busData = [];
-  // if (tableData) {
-  //   for (let i = 0; i < tableData.length; i++) {
-  //     busData.push(
-  //         <tr>
-  //           <td>{tableData[i].lineName}</td>
-  //           <td>{tableData[i].destinationName}</td>
-  //           <td>{tableData[i].stationName}</td>
-  //           <td>{tableData[i].timeToStation} min</td>
-  //         </tr>
-  //     )
-  //   }
-  // }
+  async function automaticSubmission() {
+      if (postcode) {
+          const data = await fetchData(postcode);
+          setTableData(data);
+      }
+  }
 
-
-
+  useEffect(() => {
+  const timeout = setInterval(automaticSubmission, 30000);
+  return () => {
+      clearInterval(timeout);
+    }
+  }, [automaticSubmission])
   return <>
     <div className="bgimg">
         <div className="bodyText">
@@ -52,9 +53,7 @@ const Buses: React.FC = () => {
                     <th>Due in</th>
                 </tr>
                 </thead>
-
-                {/*<tbody>{busData}</tbody>*/}
-                <tbody><BusTable tableData={tableData}/></tbody>
+                <BusTable tableData={tableData}/>
             </table>}
         </div>
     </div>

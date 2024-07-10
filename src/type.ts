@@ -1,4 +1,4 @@
-interface responseData {
+export interface responseData {
     "id": "string",
     "operationType": 0,
     "vehicleId": "string",
@@ -28,29 +28,28 @@ interface responseData {
     }
 }
 
-interface Coords {
+export interface Coords {
     result: {
         "latitude": number;
         "longitude": number;
     }
 }
 
-interface Stops {
+export interface Stops {
     id: string,
     distance: number,
     commonName: string,
     lineGroup: Lines[]
 }
 
-interface Lines {
+export interface Lines {
     naptanIdReference: string,
 }
 
-interface Output {
+export interface Output {
     lineName: string,
     timeToStation: number,
     destinationName: string,
     stationName: string,
-
+    id? : number
 }
-export type {responseData, Coords, Stops, Output};
