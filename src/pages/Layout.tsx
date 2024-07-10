@@ -1,5 +1,5 @@
 import { Outlet, Link } from "react-router-dom";
-import '../dataStyle.css';
+import './dataStyle.css';
 
 const Layout = () => {
     return (
@@ -13,9 +13,7 @@ const Layout = () => {
                         <Link className='navLink' to="/history">History</Link>
                     </li>
                 </ul>
-
             </nav>
-
             <Outlet/>
         </>
     )

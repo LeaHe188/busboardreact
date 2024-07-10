@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import fetchData from '../fetchData';
 import {Output} from '../type';
-import '../dataStyle.css';
+import './dataStyle.css';
 import BusTable from "../BusTable";
 import {useEffect} from "react";
 

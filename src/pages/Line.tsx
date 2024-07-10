@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import './dataStyle.css';
 
 function App(): React.ReactElement {
@@ -17,11 +17,10 @@ function App(): React.ReactElement {
             <h3>Nationalisation</h3>
             <p>It wasn't until 1968 that the first new line across central London for more than 60 years - the Victoria line - opened, followed in 1979 by the Jubilee line. In 1999 the Jubilee line was extended to London's Docklands, facilitating regeneration and the growth of the Canary Wharf business district.
 
-            In 2003, London Underground became a wholly owned subsidiary of TfL. Our comprehensive plan to improve the Tube has involved refurbishing hundreds of stations, upgrading lines to provide faster, more frequent and more reliable services, installing step free access at many locations, and entirely rebuilding some central London stations that have become too small to deal with the number of people passing through every day.
+                In 2003, London Underground became a wholly owned subsidiary of TfL. Our comprehensive plan to improve the Tube has involved refurbishing hundreds of stations, upgrading lines to provide faster, more frequent and more reliable services, installing step free access at many locations, and entirely rebuilding some central London stations that have become too small to deal with the number of people passing through every day.
 
                 The extra capacity these improvements are providing is badly needed. In 2016/17 1.37 billion journeys were made, over two and a half times the post-war low of 498 million journeys made in 1982.</p>
         </div>
-
     </>;
 }
 

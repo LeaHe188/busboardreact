@@ -5,13 +5,13 @@ interface BusRowProps {
     row: Output
 }
 
-const BusRow: React.FC<BusRowProps> = ({row}) => {
-    return(<tr>
-        <td>{row.lineName}</td>
+export const BusRow: React.FC<BusRowProps> = ({row}) => {
+    return(<><tr>
+        <td><a href={`https://tfl.gov.uk/bus/route/${row.lineName}/?direction=inbound/`}>{row.lineName}</a></td>
         <td>{row.destinationName}</td>
         <td>{row.stationName}</td>
         <td>{row.timeToStation} min</td>
-    </tr>);
+    </tr></>);
 }
 
 export default BusRow;

@@ -82,7 +82,7 @@ li {
 body,h1 {font-family: "Raleway", sans-serif}
 body, html {height: 100%}
 .bgimg {
-    background-image: url('./bus.jpg');
+    background-image: url('../bus.jpg');
     min-height: 100vh;
     background-position: center;
     background-size: cover;
