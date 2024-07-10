@@ -4,6 +4,7 @@ import {Output} from '../type';
 import './dataStyle.css';
 import BusTable from "../BusTable";
 import {useEffect} from "react";
+import fetchStops from "../fetchStops";
 
 const Buses: React.FC = () => {
   const [postcode, setPostcode] = useState<string>("");
@@ -16,6 +17,7 @@ const Buses: React.FC = () => {
         alert('Please input valid postcode!')
     } else {
     setTableData(data);}
+      const routeStops = await fetchStops('88');
   }
 
   function updatePostcode(data: React.ChangeEvent<HTMLInputElement>): void {

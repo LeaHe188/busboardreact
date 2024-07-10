@@ -1,13 +1,18 @@
 import React from "react";
 import {Output} from "./type";
+import {Modal} from "./Modal"
+import './modalStyle.css'
 
 interface BusRowProps {
     row: Output
 }
 
 export const BusRow: React.FC<BusRowProps> = ({row}) => {
-    return(<><tr>
-        <td><a href={`https://tfl.gov.uk/bus/route/${row.lineName}/?direction=inbound/`}>{row.lineName}</a></td>
+    return(<><Modal
+        lineName={row.lineName} btn={document.getElementById(`modal_${row.lineName}_btn`)}
+    /><tr>
+        <td>
+            <button id={`modal_${row.lineName}_btn`}> {row.lineName} </button></td>
         <td>{row.destinationName}</td>
         <td>{row.stationName}</td>
         <td>{row.timeToStation} min</td>

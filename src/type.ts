@@ -53,4 +53,15 @@ export interface Output {
     stationName: string,
     id? : number
 }
+interface StopPointSequences {
+    stopPoint: StopPoint[]
+}
+
+interface StopPoint {
+    name: string
+
+}
+export interface RouteResponse {
+    stopPointSequences: StopPointSequences[]
+}
 

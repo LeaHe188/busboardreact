@@ -20,7 +20,7 @@ const getBuses = async (id : string)=> {
 const fetchData = async (postcode: string): Promise<Output[] | null> => {
     let counter = 0;
     const response2 = await fetch(`https://api.postcodes.io/postcodes/${postcode}`);
-    if (response2.status === 404) {return null}
+    if (response2.status !== 200) {return null}
 
     const postcodeJson = await response2.json() as Coords ;
 
